@@ -13,7 +13,7 @@ user_mesage = ("Following the transcript from a recorded call \n"
 "</TRANSCRIPTION> \n" 
 "#OBJECTIVE \n" 
 "Please analyse the call and answer following questions in bullet points. \n" 
-"Question 1 - Please provide detail summary of the call? \n" 
+"Question 1 - Please provide detail summary of the call \n" 
 "Question 2 - If there are any coverages being discussed on the call. \n" 
 "Question 3 - If there is any kind of complaint or unhappiness being expressed in the call \n" 
 "Question 4 - If there seems to be any kind of confusion or misunderstanding in the conversation \n")
