@@ -8,9 +8,6 @@ from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 
-from dotenv import load_dotenv
-
-
 user_mesage = ("Following the transcript from a recorded call \n"
 "<TRANSCRIPTION> \n" 
 "   {transcript} \n" 
@@ -22,7 +19,7 @@ user_mesage = ("Following the transcript from a recorded call \n"
 "Question 3 - If there is any kind of complaint or unhappiness being expressed in the call \n" 
 "Question 4 - If there seems to be any kind of confusion or misunderstanding in the conversation \n")
 
-load_dotenv()
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 openai_model = ChatOpenAI(model="gpt-3.5-turbo")
 
@@ -38,7 +35,7 @@ questions = [
 ]
 
 # Configure Google API for audio summarization
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=GOOGLE_API_KEY)
 
 def summarize_audio(audio_file_path):
